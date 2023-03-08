@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-struct Fraction {
+struct Fraction 
+{
     int numerator; 
     int denominator; 
 
