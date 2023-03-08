@@ -39,6 +39,5 @@ int main()
 	Point* pt = new Point(x, y);
 	Point* pt2 = new Point(x2, y2);
 	cout << "Distance between two points (" << pt->x << ", " << pt->y << ") and (" << pt2->x << ", " << pt2->y << "): " << pt->distance(pt->x, pt->y, pt2->x, pt2->y)<< endl;
-
 	return 0;
 }
