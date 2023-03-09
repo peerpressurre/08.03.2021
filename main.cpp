@@ -16,7 +16,7 @@ struct Fraction
     { 
         numerator = num;
         denominator = den;
-        simplify(); 
+        simplify();
     }
 
     void simplify()
@@ -33,14 +33,6 @@ struct Fraction
         }
     }
     
-    void reduce()
-    {
-        if (numerator > denominator)
-        {
-            int integer = numerator / denominator;
-            numerator -= denominator;
-        }
-    }
 
     int findGcd(int a, int b)
     {
@@ -51,7 +43,7 @@ struct Fraction
         return findGcd(b, a % b);
     }
 
-    void print() 
+    void print()
     {
         if (denominator == 1)
         {
@@ -59,7 +51,7 @@ struct Fraction
         }
         else
         {
-            cout << numerator << "/" << denominator;
+            cout << numerator << "\n-\n" << denominator;
         }
     }
 
@@ -103,28 +95,62 @@ Fraction divide(Fraction f1, Fraction f2)
 
 int main()
 {
-    Fraction f1(2, 3);
-    Fraction f2(3, 4);
+    int f11, f12, f21, f22;
+    cout << "Enter first fraction: " << endl;
+    cin >> f11;
+    cout << "-" << endl;
+    cin >> f12;
+    cout << "Enter second fraction: " << endl;
+    cin >> f21;
+    cout << "-" << endl;
+    cin >> f22;
+    Fraction f1(f11, f12);
+    Fraction f2(f21, f22);
 
     Fraction sum = add(f1, f2);
     Fraction sub = subtract(f1, f2);
     Fraction mul = multiply(f1, f2);
     Fraction div = divide(f1, f2);
-    cout << "Sum: ";
-    sum.print();
-    cout << endl;
 
-    cout << "Sub: ";
-    sub.print();
-    cout << endl;
+    int switch_on;
+    cout << "----Choose function----" << endl;
+    cout << "-      1 - Sum()      -" << endl;
+    cout << "-      2 - Sub(       -" << endl;
+    cout << "-      3 - Mul()      -" << endl;
+    cout << "-      4 - Div()      -" << endl;
+    cout << "---------------------------" << endl;
+    cout << "-> ";
+    cin >> switch_on;
 
-    cout << "Mul: ";
-    mul.print();
-    cout << endl;
+    switch (switch_on)
+    {
+    case 1:
+    {
+        cout << "Sum:\n";
+        sum.print();
+        cout << endl;
+    }break;
+    case 2:
+    {
+        cout << "Sub:\n";
+        sub.print();
+        cout << endl;
+    }break;
+    case 3:
+    {
 
-    cout << "Div: ";
-    div.print();
-    cout << endl;
-
+        cout << "Mul:\n";
+        mul.print();
+        cout << endl;
+    }break;
+    case 4:
+    {
+        cout << "Div:\n";
+        div.print();
+        cout << endl;
+    }break;
+    default:
+        break;
+    }
     return 0;
 }
