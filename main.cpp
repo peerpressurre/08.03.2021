@@ -32,7 +32,6 @@ struct Fraction
             denominator /= gcd;
         }
     }
-    
 
     int findGcd(int a, int b)
     {
@@ -54,7 +53,6 @@ struct Fraction
             cout << numerator << "\n-\n" << denominator;
         }
     }
-
 };
 
 Fraction add(Fraction f1, Fraction f2) 
